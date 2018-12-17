@@ -838,8 +838,10 @@ class Server
         }
 
         //remove regex arguments
-        for ($i=0; $i<count($regexArguments); $i++) {
-            array_shift($params);
+        if (is_array($regexArguments)) {
+            for ($i=0; $i<count($regexArguments); $i++) {
+                array_shift($params);
+            }
         }
 
         //collect arguments
